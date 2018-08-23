@@ -1,0 +1,14 @@
+{
+    "name": "elastic/test",
+    "description": "none",
+    "require": {
+        "elasticsearch/elasticsearch": "~6.0",
+        "monolog/monolog": "~1.0"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.laravel-china.org"
+        }
+    }
+}
