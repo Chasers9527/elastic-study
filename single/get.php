@@ -5,6 +5,11 @@ $params = [
     'index' => 'es-test',
     'type'  => 'test',
     'id'    => 'change-to-your-id',
+    'client' => [
+        'ignore' => [400, 404],
+        'timeout' => 10,        // ten second timeout
+        'connect_timeout' => 10 // 连接时长
+    ]
 ];
 
 $response = $client->get ($params);

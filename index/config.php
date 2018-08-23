@@ -25,12 +25,19 @@ $hosts = [
     ],
 ];
 
+$defaultHandler = ClientBuilder::defaultHandler();
+$singleHandler = ClientBuilder::singleHandler();
+$multiHandler = ClientBuilder::multiHandler();
+// 自定义handle
+//$customHandler = new MyCustomHandler();
+
 // 用第 2 个参数设置日志级别
-$logger = ClientBuilder::defaultLogger(__DIR__ .'/,,/logs/access.log', Logger::INFO);
+$logger = ClientBuilder::defaultLogger(__DIR__ . '/../logs/access.log', Logger::INFO);
 
 $client = ClientBuilder::create()
     ->setHosts($hosts)// hosts 设置
     ->setRetries(2)// 重试次数
+    ->setHandler($defaultHandler)
     ->setLogger($logger)
     ->build();
 
@@ -39,8 +46,7 @@ try {
     echo "success";
 } catch (Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost $e) {
     $previous = $e->getPrevious();
-    if($previous instanceof Elasticsearch\Common\Exceptions\MaxRetriesException)
-    {
+    if($previous instanceof Elasticsearch\Common\Exceptions\MaxRetriesException) {
         echo "Max retries!";
     }
 }
