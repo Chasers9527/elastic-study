@@ -4,7 +4,7 @@ require_once (__DIR__ ."/../common.php");
 $params = [
     'index' => 'es-test',
     'type'  => 'test',
-    'id'    => 'F0KdZWUB_weDmiZYpHZH',
+    'id'    => 'change-to-your-id',
 ];
 
 $response = $client->get ($params);
