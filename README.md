@@ -15,6 +15,6 @@ docker-compose up kibana elastic elasticsearch
 
 使用前的准备工作：
 
+* 安装好 elasicsearch 和 kibana
 * 执行安装  composer
 * cp access.log ./logs
-* 安装好 elasicsearch 和 kibana [毕竟是使用的 ES 的 RESTFUL 接口，如果没有安装经验可以使用 laradock]
