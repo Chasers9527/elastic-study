@@ -1,6 +1,6 @@
 <?php
 
-require "vendor/autoload.php";
+require __DIR__ . "/../vendor/autoload.php";
 
 $handlerParams = ['max_handlers' => 500];
 
@@ -31,7 +31,7 @@ $params = [
     ]
 ];
 
-$futures['indexRequest'] = $client->index($params);       // Second request
+$futures['indexRequest'] = $client->b($params);       // Second request
 
 $params = [
     'index' => 'es-test',
