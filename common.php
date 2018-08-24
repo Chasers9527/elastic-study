@@ -5,6 +5,6 @@ use Elasticsearch\ClientBuilder;
 use Monolog\Logger;
 
 // 用第 2 个参数设置日志级别
-$logger = ClientBuilder::defaultLogger(__DIR__ .'/logs/access.log', Logger::ERROR);
+$logger = ClientBuilder::defaultLogger(__DIR__ .'/logs/access.log', Logger::INFO);
 // 此处 setHosts 可以设置多个，不设置则为默认: localhost:9200
-$client = ClientBuilder::create ()->setHosts (['localhost:9200'])->setLogger($logger, Logger::INFO)->build ();
+$client = ClientBuilder::create ()->setHosts (['localhost:9200'])->setLogger($logger)->build ();
